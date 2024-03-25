@@ -19,7 +19,7 @@ def text_inpaint_sdm(init_image, mask_image, prompt, device="cuda", strength=0.7
 
     pipe = StableDiffusionInpaintPipeline.from_pretrained(
         model_id_or_path,
-        # revision="fp16", 
+        revision="fp16", 
         torch_dtype=torch.float16,
         # use_auth_token=True
     )
