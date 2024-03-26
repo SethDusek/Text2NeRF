@@ -48,9 +48,10 @@ def text_inpaint_sdm2(init_image, mask_image, prompt, negative_prompt=None, devi
 class text2inpainting_sdm():
     def __init__(self, device="cuda"):
         super().__init__()
-        model_id_or_path = "weights/stable-diffusion-2-inpainting"
+        model_id_or_path = "stabilityai/stable-diffusion-2-inpainting"
         self.pipe = StableDiffusionInpaintPipeline.from_pretrained(
                         model_id_or_path,
+                        revision="fp16",
                         torch_dtype=torch.float16,
                     )
         self.pipe = self.pipe.to(device)
