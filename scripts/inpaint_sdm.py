@@ -15,7 +15,7 @@ def download_image(url):
 
 def text_inpaint_sdm(init_image, mask_image, prompt, device="cuda", strength=0.75, guidance_scale=7.5, num_images_per_prompt=1):
     # model_id_or_path = "./third-parties/stable-diffusion-v1-4"
-    model_id_or_path = "weights/stable-diffusion-2-inpainting"
+    model_id_or_path = "stabilityai/stable-diffusion-2-inpainting"
 
     pipe = StableDiffusionInpaintPipeline.from_pretrained(
         model_id_or_path,
